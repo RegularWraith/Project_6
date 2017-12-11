@@ -1,27 +1,24 @@
-package Homework.Task_1;
+package Homework.Task_3;
 
 import java.util.Scanner;
-import java.util.logging.*;
 
-import static Homework.Task_1.Calculation.squareRectangle;
+import static Homework.Task_3.Calculation.div;
 
 public class Main {
-
     public static void main(String[] args) {
-        int result = 0;
+        double result = 0;
         Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        int y = sc.nextInt();
+        double x = sc.nextInt();
+        double y = sc.nextInt();
         try{
-            result = squareRectangle(x,y);
+            result = div(x,y);
         }catch(IllegalArgumentException e){
             System.err.println(e.getMessage() + "\n" + "In the area calculation method," +
-                    " an argument with a negative value was inputed!" + "\n");
+                    " an argument with value 'zero' was inputed!" + "\n");
             e.printStackTrace();
-
             throw e;
+
         }
         System.out.println("Result is : " + result);
     }
 }
-
